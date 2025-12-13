@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { SocialButton } from "@/components/ui/social-button";
 import { DATA } from "@/data/data";
@@ -11,6 +13,8 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import dynamic from "next/dynamic";
 import LazySection from "@/components/LazySection";
+import { useState } from "react";
+import { BadgeAnimated } from "@/components/ui/badgeanimation";
 
 const Lanyard = dynamic(() => import("@/components/Lanyard"));
 const RotatingText = dynamic(() => import("@/components/RotatingText"));
@@ -24,6 +28,10 @@ const CertificateCard = dynamic(() => import("@/components/certificate-card"));
 const ResumeCard = dynamic(() => import("@/components/resume-card"));
 
 export default function Page() {
+  const [selectedType, setSelectedType] = useState(DATA.projects[0].type);
+  const filteredProjects =
+    DATA.projects.find((p) => p.type === selectedType)?.projects || [];
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero" className="relative overflow-visible">
@@ -163,7 +171,7 @@ export default function Page() {
       </section>
       <LazySection>
         <section id="projects">
-          <div className="space-y-12 w-full py-12">
+          <div className="space-y-2 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 11}>
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -181,30 +189,46 @@ export default function Page() {
                 </div>
               </div>
             </BlurFade>
+
+            <BlurFade delay={BLUR_FADE_DELAY * 12}>
+              <div className="flex justify-center space-x-3 overflow-x-auto py-4">
+                {DATA.projects.map((p) => (
+                  <BadgeAnimated
+                    key={p.type}
+                    variant={selectedType === p.type ? "default" : "outline"}
+                    active={selectedType === p.type}
+                    onClick={() => setSelectedType(p.type)}
+                  >
+                    {p.type}
+                  </BadgeAnimated>
+                ))}
+              </div>
+            </BlurFade>
+
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-              {DATA.projects.map((project, id) => (
+              {filteredProjects.map((project, id) => (
                 <BlurFade
                   key={project.title}
                   delay={BLUR_FADE_DELAY * 12 + id * 0.05}
                 >
                   <ProjectCard
                     href={project.href}
-                    key={project.title}
                     title={project.title}
                     description={project.description}
                     dates={project.dates}
                     tags={project.technologies}
                     image={project.image}
-                    video={project.video}
+                    video={project.video || ""}
                     links={project.links}
                   />
                 </BlurFade>
               ))}
             </div>
           </div>
+
           <BlurFade delay={BLUR_FADE_DELAY * 20}>
             <div className="text-center text-muted-foreground text-sm sm:text-base">
-              {"Note: Still more projects I haven't added yet :)"}
+              {"Note: You can explore more of my projects on my GitHub profile :)"}
             </div>
           </BlurFade>
         </section>

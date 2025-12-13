@@ -33,12 +33,28 @@ export default function Lanyard({
   fov = 20,
   transparent = true
 }: LanyardProps) {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsReady(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isReady) {
+    return (
+      <div className="relative z-0 w-full h-screen flex justify-center items-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
         camera={{ position, fov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) => gl.setClearColor(new Color(0x000000), transparent ? 0 : 1)}
+        dpr={[1, 2]} // Batasi pixel ratio untuk performa
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={1 / 60}>
