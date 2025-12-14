@@ -93,7 +93,7 @@ export default function Page() {
                     width={160}
                     height={160}
                     priority
-                    className="rounded-full object-cover"
+                    className="rounded-full mt-12 object-cover"
                   />
                 </BlurFade>
               ) : (
