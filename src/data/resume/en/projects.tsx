@@ -6,6 +6,36 @@ export const projects = [
     type: "Website",
     projects: [
       {
+        title: "Codefren Portfolio",
+        href: "https://github.com/OfrenDialsa/CodefrenPortfolio",
+        dates: "November 2025 - Present",
+        active: true,
+        description:
+          "A modern and interactive personal portfolio showcasing my projects, skills, and experience as a software engineer, built with performance, accessibility, and clean design in mind.",
+        technologies: [
+          "Next.js",
+          "Typescript",
+          "Vercel",
+          "TailwindCSS",
+          "Magic UI",
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://portfolio.codefren.site",
+            icon: <Icons.globe className="size-3" />,
+          },
+          {
+            type: "Source Code",
+            href: "https://github.com/OfrenDialsa/CodeFrenPortfolio",
+            icon: <Icons.github className="size-3" />,
+          },
+        ],
+        image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/CodeFren.webp",
+        video:
+          "",
+      },
+      {
         title: "Gentamin",
         href: "https://gentamin.vercel.app/",
         dates: "July 2025 - November 2025",
@@ -54,6 +84,35 @@ export const projects = [
           },
         ],
         image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/AksaLaundy.webp",
+        video:
+          "",
+      },
+      {
+        title: "Weather App",
+        href: "https://github.com/OfrenDialsa/Weather-app",
+        dates: "May 2024 - June 2024",
+        active: true,
+        description:
+          "Weather Web Application allow user to search and display weather data from around the globe",
+        technologies: [
+          "Next.js",
+          "Typescript",
+          "TailwindCSS",
+          "OpenWeather api"
+        ],
+        links: [
+          {
+            type: "Website",
+            href: "https://weather-app-ofren.vercel.app/",
+            icon: <Icons.globe className="size-3" />,
+          },
+          {
+            type: "Source Code",
+            href: "https://github.com/OfrenDialsa/Weather-app",
+            icon: <Icons.github className="size-3" />,
+          },
+        ],
+        image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/weatherapp.webp",
         video:
           "",
       },
