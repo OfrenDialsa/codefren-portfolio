@@ -37,6 +37,6 @@ export const certificates = [
         "Expert-level backend certification focusing on scalable API development, clean architecture, test-driven development, CI/CD pipelines, and cloud deployment using AWS services.",
       image: "/certificates/backend.webp",
       link: "http://dicoding.com/certificates/GRX5JELWKX0M",
-      tags: ["Hapi.js", "Clean Architecture", "Test Driven Development", "CI/CD Pipeline", "Amazon EC2", "Amazon RDS"],
+      tags: ["Hapi.js", "Clean Architecture", "Test Driven Development", "CI/CD Pipeline"],
     },
 ]
