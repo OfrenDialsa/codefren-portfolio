@@ -7,18 +7,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
 interface Props {
-  title: string; 
-  organization: string; 
-  date: string; 
-  description?: string; 
-  image?: string; 
-  link?: string; 
-  tags?: readonly string[]; 
+  title: string;
+  organization: string;
+  date: string;
+  description?: string;
+  image?: string;
+  link?: string;
+  tags?: readonly string[];
   className?: string;
 }
 
@@ -68,7 +69,11 @@ export default function CertificateCard({
         <CardContent className="px-3 pt-0 mt-2">
           <div className="flex flex-wrap gap-1">
             {tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="px-1 py-0 text-[10px]">
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="px-1 py-0 text-[10px]"
+              >
                 {tag}
               </Badge>
             ))}
@@ -77,13 +82,11 @@ export default function CertificateCard({
       )}
 
       {link && (
-        <CardFooter className="px-3 pb-3">
-          <Link
-            href={link}
-            target="_blank"
-            className="text-xs font-medium text-blue-500 hover:underline"
-          >
-            View Certificate →
+        <CardFooter className="px-3">
+          <Link href={link} target="_blank">
+            <Badge variant="default" className="cursor-pointer gap-2 px-2 py-1 text-[10px]">
+               <ArrowUpRight className="w-3 h-3" /> View Certificate 
+            </Badge>
           </Link>
         </CardFooter>
       )}
