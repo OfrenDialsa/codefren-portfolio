@@ -9,13 +9,7 @@ export const bootcamps = [
       "Developed a web application which aggregates social media data regarding cryptocurrencies and predicts future prices.",
     image:
       "https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg",
-    links: [
-      // {
-      //   title: "Github",
-      //   icon: <Icons.github className="h-4 w-4" />,
-      //   href: "https://github.com/cryptotrends/cryptotrends",
-      // },
-    ],
+    links: [],
   },
   {
     title: "Bangkit Academy 2024 Batch 2 - Mobile Development Path",

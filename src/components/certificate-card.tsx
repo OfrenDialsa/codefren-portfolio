@@ -82,7 +82,7 @@ export default function CertificateCard({
       )}
 
       {link && (
-        <CardFooter className="px-3">
+        <CardFooter className="px-3 pb-3">
           <Link href={link} target="_blank">
             <Badge variant="default" className="cursor-pointer gap-2 px-2 py-1 text-[10px]">
                <ArrowUpRight className="w-3 h-3" /> View Certificate 
