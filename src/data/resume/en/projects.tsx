@@ -11,11 +11,12 @@ export const projects = [
         dates: "November 2025 - Present",
         active: true,
         description:
-          "A modern and interactive personal portfolio showcasing my projects, skills, and experience as a software engineer, built with performance, accessibility, and clean design in mind.",
+          "A modern and interactive personal portfolio showcasing my projects, skills, and experience as a software engineer, built with performance, accessibility, and clean design in mind. Includes a secure contact form with domain-verified email delivery.",
         technologies: [
           "Next.js",
           "Typescript",
           "Vercel",
+          "Resend (Email Delivery)",
           "TailwindCSS",
           "Magic UI",
         ],
