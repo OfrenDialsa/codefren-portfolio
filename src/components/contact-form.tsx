@@ -46,27 +46,35 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mt-10 w-full space-y-4">
-      <input
-        name="name"
-        placeholder="Your Name"
-        required
-        className="w-full rounded-md border px-4 py-3 text-sm bg-background"
-      />
+      <div className="relative">
+        <input
+          className="peer w-full rounded-md border border-border px-4 py-3 text-sm bg-background focus:outline-none"
+          name="name"
+          placeholder="Your Name"
+        />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-        className="w-full rounded-md border px-4 py-3 text-sm bg-background"
-      />
+        <span className="pointer-events-none absolute left-1/2 bottom-0 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 ease-out peer-focus:left-0 peer-focus:w-full" />
+      </div>
+
+      <div className="relative">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="peer w-full rounded-md border border-border px-4 py-3 text-sm bg-background focus:outline-none"
+        />
+
+        <span className="pointer-events-none absolute left-1/2 bottom-0 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 ease-out peer-focus:left-0 peer-focus:w-full" />
+      </div>
 
       <textarea
         name="message"
         rows={5}
         placeholder="Your Message"
         required
-        className="w-full rounded-md border px-4 py-3 text-sm bg-background resize-none"
+        className="w-full rounded-md border border-border px-4 py-3 text-sm bg-background resize-none
+             focus:outline-none focus:border-black dark:focus:border-white"
       />
 
       <div className="text-center text-muted-foreground text-[11px] sm:text-xs">
