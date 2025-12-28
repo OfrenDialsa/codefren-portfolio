@@ -15,8 +15,9 @@ import dynamic from "next/dynamic";
 import LazySection from "@/components/LazySection";
 import { useState } from "react";
 import { BadgeAnimated } from "@/components/ui/badgeanimation";
-import Image from "next/image";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { ContactForm } from "@/components/contact-form";
 
 const Lanyard = dynamic(() => import("@/components/Lanyard"));
 const RotatingText = dynamic(() => import("@/components/RotatingText"));
@@ -86,15 +87,15 @@ export default function Page() {
               style={{ pointerEvents: "auto", isolation: "isolate" }}
             >
               {isMobile ? (
-                <BlurFade delay={BLUR_FADE_DELAY * 13}>
-                  <Image
-                    src="/me.webp"
-                    alt="Ofren"
-                    width={160}
-                    height={160}
-                    priority
-                    className="rounded-full mt-12 object-cover"
-                  />
+                <BlurFade delay={BLUR_FADE_DELAY * 3}>
+                  <Avatar className="size-12 m-12">
+                    <AvatarImage
+                      src={DATA.avatarUrl}
+                      alt={DATA.name}
+                      className="object-contain rounded-full"
+                    />
+                    <AvatarFallback>{DATA.initials[0]}</AvatarFallback>
+                  </Avatar>
                 </BlurFade>
               ) : (
                 <Lanyard position={[0, 0, 32]} gravity={[0, -40, 0]} />
@@ -175,72 +176,68 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <LazySection>
-        <section id="projects">
-          <div className="space-y-2 w-full py-4">
-            <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                    My Projects
-                  </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Check out my latest work
-                  </h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    I&apos;ve worked on a variety of projects, from simple to
-                    complex web, mobile and backend applications. Here are a few
-                    of my favorites.
-                  </p>
+      <section id="projects">
+        <div className="space-y-2 w-full py-4">
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  My Projects
                 </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Check out my latest work
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  I&apos;ve worked on a variety of projects, from simple to
+                  complex web, mobile and backend applications. Here are a few
+                  of my favorites.
+                </p>
               </div>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 12}>
-              <div className="flex justify-center space-x-3 overflow-x-auto py-4">
-                {DATA.projects.map((p) => (
-                  <BadgeAnimated
-                    key={p.type}
-                    variant={selectedType === p.type ? "default" : "outline"}
-                    active={selectedType === p.type}
-                    onClick={() => setSelectedType(p.type)}
-                  >
-                    {p.type}
-                  </BadgeAnimated>
-                ))}
-              </div>
-            </BlurFade>
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-              {filteredProjects.map((project, id) => (
-                <BlurFade
-                  key={project.title}
-                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                >
-                  <ProjectCard
-                    href={project.href}
-                    title={project.title}
-                    description={project.description}
-                    dates={project.dates}
-                    tags={project.technologies}
-                    image={project.image}
-                    video={project.video || ""}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-          </div>
-
-          <BlurFade delay={BLUR_FADE_DELAY * 20}>
-            <div className="text-center text-muted-foreground text-sm sm:text-base">
-              {
-                "Note: You can explore more of my projects on my GitHub profile :)"
-              }
             </div>
           </BlurFade>
-        </section>
-      </LazySection>
+
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <div className="flex justify-center space-x-3 overflow-x-auto py-4">
+              {DATA.projects.map((p) => (
+                <BadgeAnimated
+                  key={p.type}
+                  variant={selectedType === p.type ? "default" : "outline"}
+                  active={selectedType === p.type}
+                  onClick={() => setSelectedType(p.type)}
+                >
+                  {p.type}
+                </BadgeAnimated>
+              ))}
+            </div>
+          </BlurFade>
+
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {filteredProjects.map((project, id) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              >
+                <ProjectCard
+                  href={project.href}
+                  title={project.title}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  video={project.video || ""}
+                  links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+
+        <BlurFade delay={BLUR_FADE_DELAY * 20}>
+          <div className="text-center text-muted-foreground text-sm sm:text-base">
+            {"You can explore more of my projects on my GitHub :)"}
+          </div>
+        </BlurFade>
+      </section>
       <LazySection>
         <section id="bootcamps">
           <div className="space-y-12 w-full">
@@ -364,6 +361,7 @@ export default function Page() {
                   </Link>
                   .
                 </p>
+                <ContactForm />
               </div>
 
               <p className="text-muted-foreground mt-8 text-sm sm:text-base">
