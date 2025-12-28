@@ -11,6 +11,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 interface Props {
   title: string;
@@ -41,14 +42,25 @@ export default function CertificateCard({
       )}
     >
       {image && (
-        <Link href={link || "#"} target="_blank">
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full object-cover object-top transition-transform duration-300 hover:scale-105"
-          />
+        <Link
+          href={link || "#"}
+          target="_blank"
+          className="group flex justify-center overflow-hidden h-32"
+        >
+          <Avatar className="h-74 w-full rounded-none border transition-transform duration-300 group-hover:scale-105">
+            <AvatarImage
+              src={image}
+              alt={title}
+              className="object-cover"
+            />
+            <AvatarFallback className="text-xs font-medium">
+              {title
+                .split(" ")
+                .map((w) => w[0])
+                .slice(0, 2)
+                .join("")}
+            </AvatarFallback>
+          </Avatar>
         </Link>
       )}
       <CardHeader className="px-3 pt-3">
@@ -84,8 +96,11 @@ export default function CertificateCard({
       {link && (
         <CardFooter className="px-3 pb-3">
           <Link href={link} target="_blank">
-            <Badge variant="default" className="cursor-pointer gap-2 px-2 py-1 text-[10px]">
-               <ArrowUpRight className="w-3 h-3" /> View Certificate 
+            <Badge
+              variant="default"
+              className="cursor-pointer gap-2 px-2 py-1 text-[10px]"
+            >
+              <ArrowUpRight className="w-3 h-3" /> View Certificate
             </Badge>
           </Link>
         </CardFooter>

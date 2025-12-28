@@ -8,9 +8,9 @@ export const DATA = {
   location: "Kerinci, Jambi, Indonesia",
   locationLink: "https://www.google.com/maps/place/Jambi",
   description:
-    "an Information Systems undergraduate at Jambi University with a strong interest in technology and innovation.",
+    "a Full Stack Developer and Information Systems undergraduate at Jambi University focused on scalable web and mobile apps.",
   summary:
-    "I have experience in software development across mobile, web, and backend projects, gained through internship and programs like [Bangkit Academy](#bootcamps) and [AWS Backend Academy](#bootcamps). I enjoy learning new technologies, solving real-world problems, and collaborating to build impactful digital solutions. feel free to [get in touch](#contact)",
+    "I am a Full Stack Developer with a strong backend focus, experienced in building APIs, managing databases, and deploying applications to cloud environments. I also enjoy crafting responsive and accessible user interfaces for web and mobile. Through programs like [Bangkit Academy](#bootcamps) and [AWS Backend Academy](#bootcamps), I have developed production-ready systems with clean architecture and scalable design. Let’s build something impactful together [get in touch](#contact).",
   avatarUrl: "/me.webp",
   navbar: [
     { href: "#hero", icon: HomeIcon, label: "Home" },
