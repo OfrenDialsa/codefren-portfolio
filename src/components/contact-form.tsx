@@ -2,36 +2,46 @@
 
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { ArrowUpRight, FormInputIcon } from "lucide-react";
-import { InputIcon } from "@radix-ui/react-icons";
+import { FormInputIcon } from "lucide-react";
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
+    setError(null);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-      }),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
 
-    if (res.ok) {
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
       setSuccess(true);
       form.reset();
+    } catch (err) {
+      setError("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
   return (
@@ -59,20 +69,25 @@ export function ContactForm() {
         className="w-full rounded-md border px-4 py-3 text-sm bg-background resize-none"
       />
 
+      <div className="text-center text-muted-foreground text-[11px] sm:text-xs">
+        Note: Messages are sent securely using a production-ready email service.
+      </div>
+
       <Button
         type="submit"
         disabled={loading}
         className="w-full flex items-center justify-center gap-2 rounded-md bg-foreground text-background py-3 text-sm font-semibold hover:opacity-90 transition"
       >
         {loading ? "Sending..." : "Send Message"}
-        <FormInputIcon className="w-4 h-4" />
       </Button>
 
       {success && (
         <p className="text-sm text-green-600 text-center">
-          Message sent successfully!
+          Thanks! Your message has been delivered.
         </p>
       )}
+
+      {error && <p className="text-sm text-red-500 text-center">{error}</p>}
     </form>
   );
 }
