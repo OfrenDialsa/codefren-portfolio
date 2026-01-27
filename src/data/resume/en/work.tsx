@@ -30,7 +30,7 @@ export const work = [
     location: "Jl. Rtm Jl. Klp. Dua Raya No.36, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat, Indonesia 16451 · Remote",
     title: "Android Developer - Bangkit Company Track Capstone",
     logoUrl: "/work/amanah.webp",
-    start: "Nov 2024",
+    start: "Nov",
     end: "Dec 2024",
     description:
       "Contributed to the development of the SiHRIS product HRIS mobile apps system from scratch using Jetpack Compose as the primary framework for the user interface. Collaborated as part of a team for the Bangkit Academy 2024 - Company Track Capstone final project.",
