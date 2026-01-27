@@ -23,7 +23,7 @@ const Lanyard = dynamic(() => import("@/components/Lanyard"));
 const RotatingText = dynamic(() => import("@/components/RotatingText"));
 const BlurFade = dynamic(() => import("@/components/magicui/blur-fade"));
 const BlurFadeText = dynamic(
-  () => import("@/components/magicui/blur-fade-text")
+  () => import("@/components/magicui/blur-fade-text"),
 );
 const ProjectCard = dynamic(() => import("@/components/project-card"));
 const BootcampsCard = dynamic(() => import("@/components/bootcamps-card"));
@@ -87,14 +87,13 @@ export default function Page() {
               style={{ pointerEvents: "auto", isolation: "isolate" }}
             >
               {isMobile ? (
-                <BlurFade delay={BLUR_FADE_DELAY * 3}>
-                  <Avatar className="size-12 m-12">
-                    <AvatarImage
-                      src={DATA.avatarUrl}
-                      alt={DATA.name}
-                      className="object-contain rounded-full"
-                    />
-                    <AvatarFallback>{DATA.initials[0]}</AvatarFallback>
+                <BlurFade
+                  delay={BLUR_FADE_DELAY}
+                  className="order-1 md:order-2"
+                >
+                  <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
+                    <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                    <AvatarFallback>{DATA.initials}</AvatarFallback>
                   </Avatar>
                 </BlurFade>
               ) : (
@@ -117,7 +116,7 @@ export default function Page() {
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-bold">Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
@@ -125,10 +124,12 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
+                type="work"
                 key={work.company}
                 logoUrl={work.logoUrl}
                 altText={work.company}
                 title={work.company}
+                location={work.location}
                 subtitle={work.title}
                 href={work.href}
                 badges={work.badges}
@@ -150,6 +151,7 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
+                type="edu"
                 key={education.school}
                 href={education.href}
                 logoUrl={education.logoUrl}
@@ -163,14 +165,17 @@ export default function Page() {
         </div>
       </section>
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-2">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
+                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
+                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
+                </div>
               </BlurFade>
             ))}
           </div>

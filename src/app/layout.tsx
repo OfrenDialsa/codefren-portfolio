@@ -11,10 +11,10 @@ import { AnalyticsTracker } from "@/components/analytic-tracker";
 import { Suspense } from "react";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans'
-})
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
@@ -31,6 +31,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  keywords: [
+    "ofren dialsa",
+    "portfolio",
+    "fullstack developer",
+    "next.js",
+    "react",
+    "web developer",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -76,7 +84,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          inter.variable
+          inter.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
