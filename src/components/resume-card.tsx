@@ -5,11 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { ChevronRightIcon, ArrowUpRightIcon } from "lucide-react";
 
 interface ResumeCardProps {
+  type: "edu" | "work";
   logoUrl: string;
   altText: string;
   title: string;
@@ -18,8 +19,11 @@ interface ResumeCardProps {
   badges?: readonly string[];
   period: string;
   description?: string;
+  location?: string;
 }
+
 export default function ResumeCard({
+  type,
   logoUrl,
   altText,
   title,
@@ -28,6 +32,7 @@ export default function ResumeCard({
   badges,
   period,
   description,
+  location,
 }: ResumeCardProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -73,12 +78,21 @@ export default function ResumeCard({
                     ))}
                   </span>
                 )}
-                <ChevronRightIcon
-                  className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
-                  )}
-                />
+                {type === "edu" ? (
+                  <ArrowUpRightIcon
+                    className={cn(
+                      "size-4 ml-1 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                      isExpanded ? "rotate-90" : "rotate-0",
+                    )}
+                  />
+                ) : (
+                  <ChevronRightIcon
+                    className={cn(
+                      "size-4 ml-1 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                      isExpanded ? "rotate-90" : "rotate-0",
+                    )}
+                  />
+                )}
               </h3>
               <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
                 {period}
@@ -100,6 +114,11 @@ export default function ResumeCard({
               }}
               className="mt-2 text-xs sm:text-sm"
             >
+              {type === "work" && location && (
+                <div className="font-sans mb-2 text-xs text-muted-foreground">
+                  {location}
+                </div>
+              )}
               {description}
             </motion.div>
           )}
@@ -107,4 +126,4 @@ export default function ResumeCard({
       </Card>
     </Link>
   );
-};
+}

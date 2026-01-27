@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "a Full Stack Developer and Information Systems undergraduate at Jambi University focused on scalable web and mobile apps.",
   summary:
-    "I am a Full Stack Developer with a strong backend focus, experienced in building APIs, managing databases, and deploying applications to cloud environments. I also enjoy crafting responsive and accessible user interfaces for web and mobile. Through programs like [Bangkit Academy](#bootcamps) and [AWS Backend Academy](#bootcamps), I have developed production-ready systems with clean architecture and scalable design. Let’s build something impactful together [get in touch](#contact).",
+    "I am a Full Stack Developer with a strong backend focus, currently interning as a [Backend Developer Intern](#work), at [Assistx Enterprise](https://assistxenterprise.ai/). I build scalable APIs, manage databases, and deploy cloud-based systems, with hands-on experience delivering production-ready solutions through programs like [Bangkit Academy](#bootcamps) and [AWS Backend Academy](#bootcamps), Let’s build something impactful [get in touch](#contact).",
   avatarUrl: "/me.webp",
   navbar: [
     { href: "#hero", icon: HomeIcon, label: "Home" },

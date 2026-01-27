@@ -1,10 +1,22 @@
 export const work = [
   {
+    company: "Assistx Enterprise",
+    href: "https://assistxenterprise.ai/",
+    badges: [],
+    location: "Intiland Tower lt 6 Jl. Jenderal Sudirman No.Kav. 32, Karet Tengsin, Tanah Abang, Jakarta Pusat, 10220 · Remote",
+    title: "Backend Developer Intern",
+    logoUrl: "/work/assistx.png",
+    start: "January 2026",
+    end: "Present",
+    description:
+      "Contributed to the development of the Ezfiles.ai Admin Dashboard API in a production-scale environment, collaborating with senior developers under Agile Scrum using Jira and GitLab. Supported the implementation of scalable, maintainable microservices-based backend systems and produced clear API documentation using Swagger.",
+  },
+  {
     company: "Balai Bahasa Provinsi Jambi",
     href: "https://balaibahasajambi.kemendikdasmen.go.id/",
     badges: [],
-    location: "Onsite",
-    title: "Fullstack Developer - Intern",
+    location: "Jalan Arif Rahman Hakim No. 101, Telanaipura Jambi, Indonesia, 36124 · Onsite",
+    title: "Fullstack Developer Intern",
     logoUrl: "/work/bbpj.webp",
     start: "July 2025",
     end: "Sept 2025",
@@ -15,7 +27,7 @@ export const work = [
     company: "PT. Amanah Karya Indonesia",
     badges: [],
     href: "https://www.amanahcorp.co.id/",
-    location: "Remote",
+    location: "Jl. Rtm Jl. Klp. Dua Raya No.36, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat, Indonesia 16451 · Remote",
     title: "Android Developer - Bangkit Company Track Capstone",
     logoUrl: "/work/amanah.webp",
     start: "Nov 2024",
