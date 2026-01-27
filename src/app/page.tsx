@@ -91,9 +91,13 @@ export default function Page() {
                   delay={BLUR_FADE_DELAY}
                   className="order-1 md:order-2"
                 >
-                  <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                    <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                    <AvatarFallback>{DATA.initials}</AvatarFallback>
+                  <Avatar className="size-12 m-12">
+                    <AvatarImage
+                      src={DATA.avatarUrl}
+                      alt={DATA.name}
+                      className="object-contain rounded-full"
+                    />
+                    <AvatarFallback>{DATA.initials[0]}</AvatarFallback>
                   </Avatar>
                 </BlurFade>
               ) : (
@@ -171,10 +175,17 @@ export default function Page() {
           </BlurFade>
           <div className="flex flex-wrap gap-2">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <BlurFade
+                key={skill.name}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
                 <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
-                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
+                  {skill.icon && (
+                    <skill.icon className="size-4 rounded overflow-hidden object-contain" />
+                  )}
+                  <span className="text-foreground text-sm font-medium">
+                    {skill.name}
+                  </span>
                 </div>
               </BlurFade>
             ))}
