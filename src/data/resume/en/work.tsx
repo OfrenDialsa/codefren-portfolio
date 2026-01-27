@@ -24,7 +24,7 @@ export const work = [
       "Developed a web-based admin system called Gentamin using Next.js for managing digital library content. Built an inclusive mobile library application named Genta using React Native and Expo, designed to be accessible and friendly for users with disabilities.",
   },
   {
-    company: "PT. Amanah Karya Indonesia",
+    company: "Amanah Corp.",
     badges: [],
     href: "https://www.amanahcorp.co.id/",
     location: "Jl. Rtm Jl. Klp. Dua Raya No.36, Tugu, Kec. Cimanggis, Kota Depok, Jawa Barat, Indonesia 16451 · Remote",
