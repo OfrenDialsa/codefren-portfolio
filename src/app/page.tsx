@@ -35,6 +35,7 @@ export default function Page() {
   const filteredProjects =
     DATA.projects.find((p) => p.type === selectedType)?.projects || [];
   const isMobile = useIsMobile();
+  const [isLoaded, setIsLoaded] = useState(false)
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -91,11 +92,16 @@ export default function Page() {
                   delay={BLUR_FADE_DELAY * 2}
                   className="order-1 md:order-2"
                 >
-                  <Avatar className="size-12 m-12">
+                  <Avatar className="size-12 m-12 relative overflow-hidden">
                     <AvatarImage
                       src={DATA.avatarUrl}
                       alt={DATA.name}
-                      className="object-contain rounded-full"
+                      onLoad={() => setIsLoaded(true)}
+                      className={`
+                        object-cover rounded-full
+                        transition-all duration-700 ease-out
+                        ${isLoaded ? "blur-0 scale-100" : "blur-lg scale-110"}
+                      `}
                     />
                     <AvatarFallback>{DATA.initials}</AvatarFallback>
                   </Avatar>
