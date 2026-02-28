@@ -88,7 +88,7 @@ export default function Page() {
             >
               {isMobile ? (
                 <BlurFade
-                  delay={BLUR_FADE_DELAY}
+                  delay={BLUR_FADE_DELAY * 2}
                   className="order-1 md:order-2"
                 >
                   <Avatar className="size-12 m-12">
@@ -97,7 +97,7 @@ export default function Page() {
                       alt={DATA.name}
                       className="object-contain rounded-full"
                     />
-                    <AvatarFallback>{DATA.initials[0]}</AvatarFallback>
+                    <AvatarFallback>{DATA.initials}</AvatarFallback>
                   </Avatar>
                 </BlurFade>
               ) : (
