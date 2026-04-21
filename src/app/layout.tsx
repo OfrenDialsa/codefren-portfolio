@@ -1,11 +1,12 @@
+import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { DATA } from "@/data/data";
+import { DATA } from "@/data/en/data";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Script from "next/script";
 import { AnalyticsTracker } from "@/components/analytic-tracker";
 import { Suspense } from "react";
