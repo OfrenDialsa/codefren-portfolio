@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/nerodevLight.png" alt="Ofren Dialsa Profile" style="border-radius: 50%;" />
+  
   <h1>CodeFren Portfolio</h1>
   <p>Minimalist portfolio built with Next.js, Shadcn/UI, and Magic UI.</p>
   <p>
