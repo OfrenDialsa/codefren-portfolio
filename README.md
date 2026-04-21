@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/image.png" alt="Ofren Dialsa Profile" width="80" height="80" style="border-radius: 50%;" />
+  <img src="https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/image.png" alt="Ofren Dialsa Profile" height="240" style="border-radius: 50%;" />
   <h1>Ofren Dialsa Portfolio</h1>
   <p>Minimalist portfolio built with Next.js, Shadcn/UI, and Magic UI.</p>
 
