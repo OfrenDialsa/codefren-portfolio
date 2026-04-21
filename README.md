@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://www.portfolio.codefren.site/_next/image?url=%2Fnerodev.webp&w=96&q=75" alt="Ofren Dialsa Profile" width="80" height="80" style="border-radius: 50%;" />
+  <img src="https://raw.githubusercontent.com/OfrenDialsa/codefren-portfolio/refs/heads/develop/public/nerodev.webp" alt="Ofren Dialsa Profile" width="80" height="80" style="border-radius: 50%;" />
   <h1>Ofren Dialsa Portfolio</h1>
   <p>Minimalist portfolio built with Next.js, Shadcn/UI, and Magic UI.</p>
 
