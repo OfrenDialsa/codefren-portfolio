@@ -1,8 +1,7 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { SocialButton } from "@/components/ui/social-button";
-import { DATA } from "@/data/data";
+import { DATA } from "@/data/en/data";
 import { BLUR_FADE_DELAY } from "@/lib/utils";
 import {
   GitHubLogoIcon,
@@ -15,12 +14,10 @@ import dynamic from "next/dynamic";
 import LazySection from "@/components/LazySection";
 import { useState } from "react";
 import { BadgeAnimated } from "@/components/ui/badgeanimation";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { ContactForm } from "@/components/contact-form";
+import Image from "next/image";
 
-const Lanyard = dynamic(() => import("@/components/Lanyard"));
-const RotatingText = dynamic(() => import("@/components/RotatingText"));
 const BlurFade = dynamic(() => import("@/components/magicui/blur-fade"));
 const BlurFadeText = dynamic(
   () => import("@/components/magicui/blur-fade-text"),
@@ -31,11 +28,10 @@ const CertificateCard = dynamic(() => import("@/components/certificate-card"));
 const ResumeCard = dynamic(() => import("@/components/resume-card"));
 
 export default function Page() {
-  const [selectedType, setSelectedType] = useState(DATA.projects[0].type);
+  const [selectedType, setSelectedType] = useState(DATA.projects[1].type);
   const filteredProjects =
     DATA.projects.find((p) => p.type === selectedType)?.projects || [];
-  const isMobile = useIsMobile();
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -43,42 +39,30 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8 relative">
           <div className="gap-2 flex justify-between items-center relative">
             <div className="flex-col flex flex-1 space-y-3 relative z-10">
-              <div className="flex items-center flex-wrap gap-2 leading-none">
+              <div className="flex items-center gap-2 leading-none">
                 <BlurFadeText
                   delay={BLUR_FADE_DELAY * 3}
                   className="text-4xl sm:text-5xl xl:text-5xl font-bold tracking-tighter"
                   yOffset={8}
-                  text={`Hi, I'm `}
+                  text={`Hi, I'm Ofren`}
                 />
-                <BlurFade delay={BLUR_FADE_DELAY * 13}>
-                  {" "}
-                  <RotatingText
-                    texts={["Ofren", "Dialsa"]}
-                    mainClassName={`
-              inline-flex items-center justify-center
-              px-3 sm:px-3 md:px-4 
-              bg-black text-white 
-              dark:bg-white dark:text-black
-              overflow-hidden py-0.5 sm:py-1 md:py-1.5 
-              rounded-lg 
-              text-4xl sm:text-5xl xl:text-5xl font-bold 
-              leading-none
-              transition-colors duration-300 translate-y-2
-            `}
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden pb-0.5"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
+                <BlurFade
+                  delay={BLUR_FADE_DELAY * 5}
+                  className="flex items-center"
+                >
+                  <Image
+                    src={DATA.iconUrl}
+                    alt="Ofren"
+                    width={40}
+                    height={40}
+                    priority
+                    className="rounded-full object-cover size-7 sm:size-10 -mb-[12px]"
                   />
                 </BlurFade>
               </div>
               <BlurFadeText
                 className="max-w-[600px] md:text-lg"
-                delay={BLUR_FADE_DELAY * 3 + 0.2}
+                delay={BLUR_FADE_DELAY * 4}
                 text={DATA.description}
               />
             </div>
@@ -87,28 +71,24 @@ export default function Page() {
               className="flex justify-center items-center bg-transparent size-32 md:size-40 -translate-y-6 md:-translate-y-8 relative z-0"
               style={{ pointerEvents: "auto", isolation: "isolate" }}
             >
-              {isMobile ? (
-                <BlurFade
-                  delay={BLUR_FADE_DELAY * 2}
-                  className="order-1 md:order-2"
-                >
-                  <Avatar className="size-12 m-12 relative overflow-hidden">
-                    <AvatarImage
-                      src={DATA.avatarUrl}
-                      alt={DATA.name}
-                      onLoad={() => setIsLoaded(true)}
-                      className={`
+              <BlurFade
+                delay={BLUR_FADE_DELAY * 2}
+                className="order-1 md:order-2"
+              >
+                <Avatar className="size-12 m-12 relative overflow-hidden">
+                  <AvatarImage
+                    src={DATA.avatarUrl}
+                    alt={DATA.name}
+                    onLoad={() => setIsLoaded(true)}
+                    className={`
                         object-cover rounded-full
                         transition-all duration-700 ease-out
                         ${isLoaded ? "blur-0 scale-100" : "blur-lg scale-110"}
                       `}
-                    />
-                    <AvatarFallback>{DATA.initials}</AvatarFallback>
-                  </Avatar>
-                </BlurFade>
-              ) : (
-                <Lanyard position={[0, 0, 32]} gravity={[0, -40, 0]} />
-              )}
+                  />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </BlurFade>
             </div>
           </div>
         </div>
@@ -256,7 +236,16 @@ export default function Page() {
 
         <BlurFade delay={BLUR_FADE_DELAY * 20}>
           <div className="text-center text-muted-foreground text-sm sm:text-base">
-            {"You can explore more of my projects on my GitHub :)"}
+            You can{" "}
+            <span className="font-semibold text-foreground">explore more</span>{" "}
+            of my projects on{" "}
+            <Link
+              href="https://github.com/OfrenDialsa?tab=repositories"
+              target="_blank"
+              className="underline underline-offset-4 text-foreground transition-colors"
+            >
+              Github.
+            </Link>
           </div>
         </BlurFade>
       </section>
@@ -344,7 +333,7 @@ export default function Page() {
               <Link
                 href="https://www.linkedin.com/in/ofren-dialsa/details/certifications/"
                 target="_blank"
-                className="underline underline-offset-4 hover:text-foreground transition-colors"
+                className="underline underline-offset-4 text-foreground transition-colors"
               >
                 view them all on my LinkedIn
               </Link>
