@@ -1,40 +1,36 @@
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+<div align="center">
+  <img src="https://www.portfolio.codefren.site/_next/image?url=%2Fnerodev.webp&w=96&q=75" alt="Ofren Dialsa Profile" width="80" height="80" style="border-radius: 50%;" />
+  <h1>Ofren Dialsa Portfolio</h1>
+  <p>Minimalist portfolio built with Next.js, Shadcn/UI, and Magic UI.</p>
+
+  <p>
+    <a href="https://www.portfolio.codefren.site"><strong>Live Demo »</strong></a>
+  </p>
+</div>
+
+<br />
+
+# About This Project
+
+This portfolio was built for speed and effortless customization—because I know we'd all rather be coding than wrestling with a CSS file for five hours. Leveraging the latest React ecosystem, it delivers a buttery-smooth user experience that’s fast enough to keep even the most impatient recruiter happy.
+
+You can deploy it on **Netlify** or **Vercel**.
+
+# Tech Stack
+
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Shadcn/UI](https://ui.shadcn.com/) & [Magic UI](https://magicui.design/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Package Manager:** [pnpm](https://pnpm.io/)
 
 # Features
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
-
-# Getting Started Locally
-
-1. Clone this repository to your local machine:
-
-   ```bash
-   git clone https://github.com/OfrenDialsa/ofrendialsa.site
-   ```
-
-2. Move to the cloned directory
-
-   ```bash
-   cd portfolio
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-4. Start the local Server:
-
-   ```bash
-   pnpm dev
-   ```
-
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+- **Easy Setup:** Configure the entire website through a single file: `src/data/resume.tsx`.
+- **Responsive:** Optimized layout for all devices, including mobile, tablet, and desktop.
+- **Performance:** Excellent Lighthouse scores, fully optimized for Next.js and Vercel.
+- **Modern UI:** Interactive and smooth components powered by Magic UI and Framer Motion.
 
 # License
 
