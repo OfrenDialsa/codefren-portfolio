@@ -7,7 +7,6 @@
     <a href="https://www.portfolio.codefren.site"><strong>Live Demo »</strong></a>
   </p>
 
-  <img src="https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/image.png" alt="Ofren Dialsa Profile" height="520" style="border-radius: 50%;" />
 </div>
 
 <br />
