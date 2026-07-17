@@ -238,8 +238,8 @@ export default function Page() {
         <BlurFade delay={BLUR_FADE_DELAY * 20}>
           <div className="text-center text-muted-foreground text-sm sm:text-base">
             You can{" "}
-            <span className="font-semibold text-foreground">explore more</span>{" "}
-            of my projects on{" "}
+            <span className="font-semibold text-foreground">explore</span> my
+            other projects on{" "}
             <Link
               href="https://github.com/OfrenDialsa?tab=repositories"
               target="_blank"
