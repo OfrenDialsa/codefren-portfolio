@@ -84,19 +84,21 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background font-sans antialiased",
           inter.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
-            {children}
-            <Suspense fallback={null}>
-              <Navbar />
-              <AnalyticsTracker />
-            </Suspense>
-          </TooltipProvider>
-        </ThemeProvider>
+        <div className="max-w-2xl mx-auto py-12 sm:py-24 px-6">
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <TooltipProvider delayDuration={0}>
+              {children}
+              <Suspense fallback={null}>
+                <Navbar />
+                <AnalyticsTracker />
+              </Suspense>
+            </TooltipProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
