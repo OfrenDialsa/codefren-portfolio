@@ -29,8 +29,19 @@ const ResumeCard = dynamic(() => import("@/components/resume-card"));
 
 export default function Page() {
   const [selectedType, setSelectedType] = useState(DATA.projects[1].type);
-  const filteredProjects =
-    DATA.projects.find((p) => p.type === selectedType)?.projects || [];
+  const filteredProjects = (DATA.projects.find((p) => p.type === selectedType)
+    ?.projects || []) as Array<{
+    title: string;
+    href: string;
+    dates: string;
+    active: boolean;
+    description: string;
+    technologies: string[];
+    links: { type: string; href: string; icon: any }[];
+    image: string;
+    video: string;
+    org?: { text: string; href: string };
+  }>;
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
