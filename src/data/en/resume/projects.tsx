@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Paperclip } from "lucide-react";
+import { Globe, Paperclip } from "lucide-react";
 
 export const projects = [
   {
@@ -32,9 +32,9 @@ export const projects = [
             icon: <Icons.github className="size-3" />,
           },
         ],
-        image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/CodeFren.webp",
-        video:
-          "",
+        image:
+          "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/CodeFren.webp",
+        video: "",
       },
       {
         title: "Gentamin",
@@ -84,9 +84,9 @@ export const projects = [
             icon: <Icons.github className="size-3" />,
           },
         ],
-        image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/AksaLaundy.webp",
-        video:
-          "",
+        image:
+          "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/AksaLaundy.webp",
+        video: "",
       },
       {
         title: "Weather App",
@@ -99,7 +99,7 @@ export const projects = [
           "Next.js",
           "Typescript",
           "TailwindCSS",
-          "OpenWeather api"
+          "OpenWeather api",
         ],
         links: [
           {
@@ -113,15 +113,53 @@ export const projects = [
             icon: <Icons.github className="size-3" />,
           },
         ],
-        image: "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/weatherapp.webp",
-        video:
-          "",
+        image:
+          "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/weatherapp.webp",
+        video: "",
       },
     ],
   },
   {
     type: "Backend",
     projects: [
+      {
+        title: "Ezfiles API",
+        href: "",
+        dates: "January - April 2026",
+        active: true,
+        description:
+          "AI-powered document and media optimization tool that allows users to compress, convert, and edit files like PDFs, videos, images, and audio.",
+        technologies: [
+          "Golang",
+          "Gin",
+          "PostgreSQL",
+          "S3 Compatible storage",
+          "NSQ",
+          "Zerolog",
+          "Prometheus",
+          "Viper",
+          "Sentry",
+        ],
+        links: [
+          {
+            type: "Live website",
+            href: "https://dev.ezfiles.ai/",
+            icon: <Globe className="size-3" />,
+          },
+          {
+            type: "SwaggerHub",
+            href: "https://app.swaggerhub.com/apis/asda-d3a/ezfiles-api/1.x",
+            icon: <Globe className="size-3" />,
+          },
+        ],
+        image:
+          "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/ezfiles.webp",
+        video: "",
+        org: {
+          text: "Assistx Enterprise",
+          href: "https://assistxenterprise.ai/",
+        },
+      },
       {
         title: "Forum API",
         href: "https://www.github.com/OfrenDialsa/ForumAPI",
@@ -154,6 +192,10 @@ export const projects = [
         image:
           "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/33bdf74b7877505d074caa3253272e2e7b21e58b/Portfolio/ForumAPI.png",
         video: "",
+        org: {
+          text: "AWS Backend Academy",
+          href: "#bootcamps",
+        },
       },
       {
         title: "Neromerce API",
@@ -204,29 +246,6 @@ export const projects = [
         ],
         image:
           "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/Hapi.png",
-        video: "",
-      },
-      {
-        title: "PerpusGo API",
-        href: "https://www.github.com/OfrenDialsa/PerpusGo",
-        dates: "March 2025 - Present",
-        active: true,
-        description:
-          "PerpusGo API is a simple RESTful API Service for managing books, borrowing, and more.",
-        technologies: [
-          "Golang",
-          "Gofiber",
-          "PostgreSQL",
-        ],
-        links: [
-          {
-            type: "Source Code",
-            href: "https://www.github.com/OfrenDialsa/PerpusGo",
-            icon: <Icons.github className="size-3" />,
-          },
-        ],
-        image:
-          "https://raw.githubusercontent.com/OfrenDialsa/Mediacontent/refs/heads/main/Portfolio/Go%20Fiber.webp",
         video: "",
       },
     ],

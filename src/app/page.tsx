@@ -34,7 +34,7 @@ export default function Page() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-screen space-y-10">
       <section id="hero" className="relative overflow-visible">
         <div className="mx-auto w-full max-w-2xl space-y-8 relative">
           <div className="gap-2 flex justify-between items-center relative">
@@ -228,6 +228,7 @@ export default function Page() {
                   image={project.image}
                   video={project.video || ""}
                   links={project.links}
+                  org={project.org}
                 />
               </BlurFade>
             ))}
