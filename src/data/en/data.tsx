@@ -9,7 +9,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/Jambi",
   description:
     "Backend Developer & Software Engineer passionate about scalable architecture, robust APIs, and building efficient, production-ready systems.",
-  summary: `I am a [Software Engineer](#) specializing in [Backend Development](#), currently pursuing my Computer Degree (S.kom) at [Jambi University](#), please pray for me so i can complete it ASAP. 
+  summary: `I am a [Software Engineer](#) specializing in [Backend Development](#) with a Computer Degree (S.Kom) from [Jambi University](#). 
     I build scalable APIs, manage databases, and deploy cloud-based systems, with hands-on experience delivering production-ready solutions through various internship and courses, 
     Let’s build something impactful, and feel free to [get in touch](#contact).`,
   avatarUrl: "/me.webp",
