@@ -4,12 +4,12 @@
   <h1>CodeFren Portfolio</h1>
   <p>Minimalist portfolio built with Next.js, Shadcn/UI, and Magic UI.</p>
   <p>
-    <a href="https://www.portfolio.codefren.site"><strong>Live Demo »</strong></a>
+    <a href="https://www.ofrendialsa.netlify.app"><strong>Live Demo »</strong></a>
   </p>
 
 </div>
 
-<br />
+<br />.
 
 # About This Project
 
